@@ -78,12 +78,8 @@ def main():
     curr_version = current_version()
     print(f"Current version: {curr_version}")
     print(f"Action release: {last_release}")
-    release = release_note_until_last_release(release_notes, last_release)
     with open("release_note.md", "w") as f:
-        if release == "":
-            f.write("TBD")
-            return
-        f.write(release)
+        f.write("TBD")
     
 if __name__ == "__main__":
     main()
