@@ -37,16 +37,16 @@ jobs:
       # ------------------------------------------- Ubuntu 20.04 AppImage
       - name: Build app image on 20.04
         run: |
-          docker run --privileged --name builder-2004 builder-image:2004 /rcssmonitor/utils/appimage/docker-entrypoint.sh
+          docker run --privileged --name builder-2004 builder-image:2004 /soccerwindow2/utils/appimage/docker-entrypoint.sh
           
-          docker cp builder-2004:/rcssmonitor/build/rcssmonitor-x86_64.AppImage \
-            ${{ github.workspace }}/artifact/rcssmonitor-${{ steps.cmake_version.outputs.version }}-x86_64.AppImage
+          docker cp builder-2004:/soccerwindow2/build/soccerwindow2-x86_64.AppImage \
+            ${{ github.workspace }}/artifact/soccerwindow2-${{ steps.cmake_version.outputs.version }}-x86_64.AppImage
 
       # ------------------------------------------- Artifact
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: rcssmonitor-x86_64
+          name: soccerwindow2-x86_64
           path: ${{ github.workspace }}/artifact/*
           retention-days: 5
 
@@ -70,7 +70,7 @@ jobs:
         id: create_release
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "${{ github.workspace }}/artifact/rcssmonitor-${{ steps.cmake_version.outputs.version }}-x86_64.AppImage"
+          artifacts: "${{ github.workspace }}/artifact/soccerwindow2-${{ steps.cmake_version.outputs.version }}-x86_64.AppImage"
           token: ${{ secrets.GITHUB_TOKEN }}
           bodyFile: "${{ github.workspace }}/artifact/release_note"
           name: "${{ env.release-prefix }}${{ steps.cmake_version.outputs.version }}"

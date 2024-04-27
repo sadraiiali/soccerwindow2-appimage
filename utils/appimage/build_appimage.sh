@@ -4,7 +4,7 @@ set -e
 
 SCRIPT_DIR="$(pwd)/build"
 M_BUILD_PWD="$SCRIPT_DIR/monitor-bin"
-BIN_PATH="$M_BUILD_PWD/bin/rcssmonitor"
+BIN_PATH="$M_BUILD_PWD/bin/soccerwindow2"
 APP_IMAGE_DIR="$SCRIPT_DIR/appimage"
 
 cd $SCRIPT_DIR
@@ -28,9 +28,9 @@ LIBRCSSRCG_PATH=$(ldd $BIN_PATH | grep librcssrcg.so | awk '{ print $3 }')
                 --plugin qt \
                 -l $LIBZ_PATH \
                 -l $LIBRCSSRCG_PATH \
-                --executable $M_BUILD_PWD/bin/rcssmonitor \
-                --desktop-file $SCRIPT_DIR/rcssmonitor.desktop \
-                --icon-file $SCRIPT_DIR/rcssmonitor.png \
+                --executable $M_BUILD_PWD/bin/soccerwindow2 \
+                --desktop-file $SCRIPT_DIR/soccerwindow2.desktop \
+                --icon-file $SCRIPT_DIR/soccerwindow2.png \
                 --output appimage 
 
 

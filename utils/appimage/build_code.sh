@@ -11,5 +11,5 @@ automake --add-missing
 $WORKDIR/configure --prefix="$MONITOR_BIN_PATH"
 make -j$(nproc)
 make install
-cp $WORKDIR/utils/appimage/rcssmonitor.desktop $BUILD_PWD
-cp $WORKDIR/utils/appimage/rcssmonitor.png $BUILD_PWD
+cp $WORKDIR/utils/appimage/soccerwindow2.desktop $BUILD_PWD
+cp $WORKDIR/utils/appimage/soccerwindow2.png $BUILD_PWD

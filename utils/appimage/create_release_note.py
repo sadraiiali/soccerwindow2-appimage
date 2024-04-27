@@ -66,7 +66,7 @@ def release_note_until_last_release(release_notes, last_release):
 
 def get_release_from_github(latest_release):
     out = latest_release["tag_name"]
-    out = out.replace("rcssmonitor-", "")
+    out = out.replace("soccerwindow2-", "")
     return out
     
 
