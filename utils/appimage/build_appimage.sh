@@ -3,7 +3,7 @@ set -e
 
 
 SCRIPT_DIR="$(pwd)/build"
-M_BUILD_PWD="$SCRIPT_DIR/monitor-bin"
+M_BUILD_PWD="$SCRIPT_DIR/soccerwindow2-bin"
 BIN_PATH="$M_BUILD_PWD/bin/soccerwindow2"
 APP_IMAGE_DIR="$SCRIPT_DIR/appimage"
 
@@ -22,12 +22,12 @@ mkdir -p $APP_IMAGE_DIR || true
 
 # ------ LIBRARIES
 LIBZ_PATH=$(ldd $BIN_PATH | grep libz.so | awk '{ print $3 }')
-LIBRCSSRCG_PATH=$(ldd $BIN_PATH | grep librcssrcg.so | awk '{ print $3 }')
+LIBRCSC_PATH=$(ldd $BIN_PATH | grep librcsc.so | awk '{ print $3 }')
 
 ./linuxdeploy-x86_64.AppImage --appdir $APP_IMAGE_DIR \
                 --plugin qt \
                 -l $LIBZ_PATH \
-                -l $LIBRCSSRCG_PATH \
+                -l $LIBRCSC_PATH \
                 --executable $M_BUILD_PWD/bin/soccerwindow2 \
                 --desktop-file $SCRIPT_DIR/soccerwindow2.desktop \
                 --icon-file $SCRIPT_DIR/soccerwindow2.png \

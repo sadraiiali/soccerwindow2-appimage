@@ -4,7 +4,7 @@ set -e
 WORKDIR="$(pwd)"
 
 BUILD_PWD="$WORKDIR/build"
-MONITOR_BIN_PATH="$BUILD_PWD/monitor-bin"
+MONITOR_BIN_PATH="$BUILD_PWD/soccerwindow2-bin"
 mkdir -p $MONITOR_BIN_PATH
 autoreconf -i
 automake --add-missing
